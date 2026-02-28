@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sugar & Crumbs | Premium Bakery</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Sugar & <span>Crumbs</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#custom">Custom Order</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="cart-icon">
+            <i class="fas fa-shopping-cart"></i>
+            <span id="cart-count">0</span>
+        </div>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Baked with Love, <br>Served with Joy</h1>
+            <p>Experience the finest artisanal cakes and pastries in town, crafted with premium ingredients and a dash of magic.</p>
+            <a href="#menu" class="btn-primary">Order Now</a>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Featured Cake">
+        </div>
+    </section>
+
+    <!-- Fresh Picks (Horizontal Scroll) -->
+    <section class="fresh-picks">
+        <h2 class="section-title">Today's Fresh Picks</h2>
+        <div class="scroll-container">
+            <div class="product-card">
+                <span class="badge">Best Seller</span>
+                <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=300&q=80" alt="Cupcake">
+                <h3>Velvet Cupcake</h3>
+                <p>₹120</p>
+                <button class="add-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <span class="badge fresh">Fresh</span>
+                <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&w=300&q=80" alt="Croissant">
+                <h3>Buttery Croissant</h3>
+                <p>₹80</p>
+                <button class="add-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+            <div class="product-card">
+                <span class="badge">Best Seller</span>
+                <img src="https://images.unsplash.com/photo-1588195538326-c5b1e9f80a1b?auto=format&fit=crop&w=300&q=80" alt="Cake">
+                <h3>Truffle Slice</h3>
+                <p>₹150</p>
+                <button class="add-btn" onclick="addToCart()">Add to Cart</button>
+            </div>
+            <!-- Add more cards as needed -->
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="menu-section">
+        <h2 class="section-title">Our Menu</h2>
+        
+        <div class="menu-tabs">
+            <div class="menu-category">
+                <h3><i class="fas fa-birthday-cake"></i> Signature Cakes</h3>
+                <div class="menu-item">
+                    <span>Chocolate Truffle</span>
+                    <span class="dots"></span>
+                    <span>₹650</span>
+                    <button class="mini-add" onclick="addToCart()">+</button>
+                </div>
+                <div class="menu-item">
+                    <span>Red Velvet</span>
+                    <span class="dots"></span>
+                    <span>₹700</span>
+                    <button class="mini-add" onclick="addToCart()">+</button>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h3><i class="fas fa-bread-slice"></i> Bakery Snacks</h3>
+                <div class="menu-item">
+                    <span>Veg Puffs</span>
+                    <span class="dots"></span>
+                    <span>₹40</span>
+                    <button class="mini-add" onclick="addToCart()">+</button>
+                </div>
+                <div class="menu-item">
+                    <span>Garlic Bread</span>
+                    <span class="dots"></span>
+                    <span>₹90</span>
+                    <button class="mini-add" onclick="addToCart()">+</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Order -->
+    <section id="custom" class="custom-order">
+        <div class="custom-container">
+            <h2><i class="fas fa-magic"></i> Customize Your Cake</h2>
+            <form id="cakeForm">
+    <div class="form-group">
+        <!-- Added name="size" -->
+        <select name="size" id="cakeSize" required>
+            <option value="">Select Size</option>
+            <option value="0.5kg">0.5 kg</option>
+            <option value="1kg">1 kg</option>
+        </select>
+        <!-- Added name="flavor" -->
+        <select name="flavor" id="cakeFlavor" required>
+            <option value="">Select Flavor</option>
+            <option value="Vanilla">Vanilla</option>
+            <option value="Chocolate">Chocolate</option>
+        </select>
+    </div>
+    <!-- Added name="message" -->
+    <input type="text" name="message" id="cakeMessage" placeholder="Message on Cake (e.g., Happy Birthday Rahul)" required>
+    <button type="submit" class="btn-primary">Submit Inquiry</button>
+</form>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section id="gallery" class="gallery">
+        <h2 class="section-title">Our Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?auto=format&fit=crop&w=400&q=80" alt="Gallery 1"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=400&q=80" alt="Gallery 2"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=400&q=80" alt="Gallery 3"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=400&q=80" alt="Gallery 4"></div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="contact-info">
+                <h3>Sugar & Crumbs</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Baker's Street, Mumbai, India</p>
+                <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                <p><i class="fas fa-envelope"></i> hello@sugarcrumbs.com</p>
+            </div>
+            <div class="socials">
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-facebook"></i>
+                <i class="fab fa-whatsapp"></i>
+            </div>
+        </div>
+        <p class="copyright">&copy; 2024 Sugar & Crumbs. Handcrafted Excellence.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
